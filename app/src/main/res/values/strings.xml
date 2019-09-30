@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Projeto1</string>
+    <string name="button">Button</string>
+    <string name="sos">SOS</string>
+    <string name="pedir_permiss_o">Pedir Permissão</string>
+    <string name="diocionario">Diocionario</string>
+    <string name="dicionario">Dicionario</string>
+    <string name="tradutor_morse">Tradutor Morse</string>
 </resources>
