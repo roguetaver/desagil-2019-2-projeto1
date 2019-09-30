@@ -25,22 +25,22 @@ public class SmsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
 
-        String messageSOS = "socorro";
+        String messageSOS = "S O C O R R O!!!!!!";
         Button buttonSOS = findViewById(R.id.button4);
 
         buttonSOS.setOnClickListener((view) -> {
 
 
-
-            String phone = "973715699" ;// textPhone.getText().toString();
-
-            if (!PhoneNumberUtils.isGlobalPhoneNumber(phone)) {
-                showToast("Número inválido!");
-                return;
-            }
+            String[] lista = new String [2];
+            lista[0] = "973715699" ;// textPhone.getText().toString();
+            lista[1] = "997638849";
 
             SmsManager manager = SmsManager.getDefault();
-            manager.sendTextMessage(phone, null, messageSOS, null, null);
+
+            for (String s : lista) {
+                manager.sendTextMessage(s, null, messageSOS, null, null);
+            }
+
             showToast("MENSAGEM DE SOCORRO ENVIADA");
 
 
