@@ -8,23 +8,57 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="132dp"
-        android:layout_height="128dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:layout_width="153dp"
+        android:layout_height="155dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toEndOf="@+id/button4" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="93dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="40dp"
-        android:text="SOS"
+        android:layout_width="87dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="48dp"
+        android:background="#F44336"
+        android:text="@string/sos"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/caixaMorse"
+        android:layout_width="235dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="188dp"
+        android:text="@string/tradutor_morse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dicionario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dicionario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="84dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#2196F3"
+        android:text="Tocar/Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3" />
 
 </android.support.constraint.ConstraintLayout>
