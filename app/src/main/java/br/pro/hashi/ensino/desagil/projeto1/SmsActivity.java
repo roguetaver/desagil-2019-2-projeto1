@@ -1,17 +1,19 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
+import android.view.View;
 import android.widget.Button;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import br.edu.insper.al.algumaluno.sms.R;
 
 public class SmsActivity extends AppCompatActivity {
 
-
+    protected  Button botaoMorse;
+    private TextView caixaTexto;
     private void showToast(String text) {
 
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
@@ -43,7 +45,23 @@ public class SmsActivity extends AppCompatActivity {
 
             showToast("MENSAGEM DE SOCORRO ENVIADA");
 
-
         });
-    }
+//        botaoMorse.setOnClickListener(new View.OnClickListener() {
+//
+//
+//            public void onClick(View view) {
+//                caixaTexto.append(".");
+//            }
+//        });
+//        botaoMorse.setOnLongClickListener(new View.OnLongClickListener() {
+//
+//
+//            public boolean onLongClick(View view) {
+//                caixaTexto.append("-");
+//                return true;
+//            }
+//        });
+
+}
+
 }
