@@ -10,21 +10,22 @@
         android:id="@+id/morse"
         android:layout_width="153dp"
         android:layout_height="155dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/button"
+        android:layout_marginBottom="92dp"
+        android:background="@drawable/morse"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/send"
         app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        app:layout_constraintStart_toEndOf="@+id/sos_btn" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="87dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
-        android:background="#F44336"
-        android:text="@string/sos"
+        android:id="@+id/sos_btn"
+        android:layout_width="88dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/sos_btn"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -51,12 +52,13 @@
 
     <Button
         android:id="@+id/send"
-        android:layout_width="84dp"
-        android:layout_height="152dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#2196F3"
-        android:text="Tocar/Enviar"
+        android:layout_width="88dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/send_btn"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

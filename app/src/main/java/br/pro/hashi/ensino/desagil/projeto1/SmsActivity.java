@@ -28,7 +28,7 @@ public class SmsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sms);
 
         String messageSOS = "S O C O R R O!!!!!! morsaApp";
-        Button buttonSOS = findViewById(R.id.button4);
+        Button buttonSOS = findViewById(R.id.sos_btn);
 
         buttonSOS.setOnClickListener((view) -> {
 
