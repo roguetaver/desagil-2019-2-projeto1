@@ -73,7 +73,7 @@ public class SmsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v){
-0
+
                 String message = caixaTexto.getText().toString();
                 String last = "";
                 String letters = "";
