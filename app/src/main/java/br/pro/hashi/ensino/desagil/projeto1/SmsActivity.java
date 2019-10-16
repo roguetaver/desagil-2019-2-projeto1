@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -8,13 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 import br.edu.insper.al.algumaluno.sms.R;
 
 public class SmsActivity extends AppCompatActivity {
 
     protected  Button botaoMorse;
     private TextView caixaTexto;
-
+    private TextToSpeech t1;
     private void showToast(String text) {
 
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
@@ -70,8 +73,8 @@ public class SmsActivity extends AppCompatActivity {
             }
 
         });
-        Button botaoTraduz = findViewById(R.id.send);
-        botaoTraduz.setOnClickListener(new View.OnClickListener() {
+        Button botaoTrad = findViewById(R.id.trad_space);
+        botaoTrad.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -101,9 +104,57 @@ public class SmsActivity extends AppCompatActivity {
                 }
             }
         });
-        botaoTraduz.setOnLongClickListener(new View.OnLongClickListener(){
+        botaoTrad.setOnLongClickListener(new View.OnLongClickListener(){
             @Override
             public boolean onLongClick(View view) {
+                String message = caixaTexto.getText().toString();
+
+
+                caixaTexto.setText(message + " ");
+                return true;
+            }
+
+        });
+        Button botaoApaga = findViewById(R.id.apagar);
+        botaoApaga.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v){
+
+                String message = caixaTexto.getText().toString();
+                int messageLen;
+                if (!caixaTexto.getText().toString().isEmpty()){
+                messageLen = message.length();
+                message = message.substring(0, messageLen-1);
+                caixaTexto.setText(message);
+                }
+                else{
+                    showToast("CARACTER AUSENTE");
+                }
+            }
+        });
+        botaoApaga.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View view) {
+
+                if (!caixaTexto.getText().toString().isEmpty()){
+
+                    caixaTexto.setText("");
+                }
+                else{
+                    showToast("MENSAGEM AUSENTE");
+                }
+                caixaTexto.setText("");
+                return true;
+            }
+
+        });
+        Button botaoEnvia = findViewById(R.id.send);
+
+        botaoEnvia.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
                 String message = caixaTexto.getText().toString();
                 SmsManager manager = SmsManager.getDefault();
                 if (!caixaTexto.getText().toString().isEmpty()){
@@ -116,11 +167,27 @@ public class SmsActivity extends AppCompatActivity {
                         showToast("MENSAGEM AUSENTE");
                     }
             caixaTexto.setText("");
-            return true;
+
             }
 
         });
-
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.US);
+                }
+            }
+        });
+        botaoEnvia.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String toSpeak = caixaTexto.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                return true;
+            }
+        });
 }
 
 }
