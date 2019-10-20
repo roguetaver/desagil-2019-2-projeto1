@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
-    android:backgroundTint="#2196F3"
     tools:context="br.pro.hashi.ensino.desagil.projeto1.MainActivity">
 
     <Button
@@ -17,6 +15,33 @@
         android:text="@string/pedir_permiss_o"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
+
+    <ImageView
+        android:id="@+id/splashImg"
+        android:layout_width="299dp"
+        android:layout_height="339dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423"
+        app:srcCompat="@drawable/splash" />
+
+    <ImageView
+        android:id="@+id/walrusImg"
+        android:layout_width="241dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toBottomOf="@+id/splashImg"
+        app:layout_constraintEnd_toEndOf="@+id/splashImg"
+        app:layout_constraintStart_toStartOf="@+id/splashImg"
+        app:layout_constraintTop_toTopOf="@+id/splashImg"
+        app:srcCompat="@drawable/ic_vector_name" />
+
 </android.support.constraint.ConstraintLayout>

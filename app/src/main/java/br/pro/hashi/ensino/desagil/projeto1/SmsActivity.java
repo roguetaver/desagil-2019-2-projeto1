@@ -115,7 +115,7 @@ public class SmsActivity extends AppCompatActivity {
             }
 
         });
-        Button botaoApaga = findViewById(R.id.apagar);
+        Button botaoApaga = findViewById(R.id.delete_btn);
         botaoApaga.setOnClickListener(new View.OnClickListener() {
 
 

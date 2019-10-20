@@ -6,26 +6,26 @@
     android:layout_height="match_parent"
     tools:context="br.pro.hashi.ensino.desagil.projeto1.SmsActivity">
 
+
     <Button
         android:id="@+id/morse"
         android:layout_width="153dp"
         android:layout_height="155dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/morse"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/send"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintEnd_toStartOf="@+id/delete_btn"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/sos_btn" />
-
 
     <Button
         android:id="@+id/sos_btn"
         android:layout_width="88dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
 
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/sos_btn"
         app:layout_constraintBottom_toTopOf="@+id/trad_space"
         app:layout_constraintStart_toStartOf="parent" />
@@ -56,7 +56,7 @@
         android:id="@+id/send"
         android:layout_width="88dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/send_btn"
 
@@ -65,21 +65,22 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/apagar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="40dp"
-        android:text="Apagar"
+        android:id="@+id/delete_btn"
+        android:layout_width="89dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/delete_btn"
         app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/trad_space"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_width="88dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/oval_button"
         android:text="Trad/Space"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
