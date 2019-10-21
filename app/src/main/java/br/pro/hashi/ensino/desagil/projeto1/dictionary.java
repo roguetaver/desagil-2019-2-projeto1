@@ -1,5 +1,6 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -19,7 +20,7 @@ public class dictionary extends AppCompatActivity {
     private ListView list_MorseToAlpha;
 
     // Criando o translator.
-    private final Translator translator = new Translator();
+    private final Translator translator = new Translator(this);
 
 
     @Override
