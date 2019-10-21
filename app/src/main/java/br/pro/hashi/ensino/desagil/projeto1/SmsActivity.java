@@ -1,4 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
+import android.content.Context;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +39,7 @@ public class SmsActivity extends AppCompatActivity {
         String[] lista = new String [2];
         lista[0] = "973715699" ;// textPhone.getText().toString();
         lista[1] = "997638849";
-        Translator translator = new Translator();
+        Translator translator = new Translator(this);
 
         buttonSOS.setOnClickListener((view) -> {
 
@@ -81,16 +82,25 @@ public class SmsActivity extends AppCompatActivity {
             public void onClick(View v){
 
                 String message = caixaTexto.getText().toString();
+
+                if (caixaTexto.length() <= 0){
+                    message = "" ;
+                }
+
                 String last = "";
                 String letters = "";
 
                 if (!caixaTexto.getText().toString().isEmpty()){
-                    for(char c: message.toCharArray()){
-                        if(c=='.'||c=='-'){
-                            last += String.valueOf(c);
-                        }else{
-                            letters += String.valueOf(c);
-                        }
+
+                        for(char c: message.toCharArray()) {
+                            if (c == '.' || c == '-') {
+                                last += String.valueOf(c);
+                            }
+                            else
+                                {
+                                letters += String.valueOf(c);
+                            }
+
                     }
 
                     char numero_char = translator.morseToChar(last);

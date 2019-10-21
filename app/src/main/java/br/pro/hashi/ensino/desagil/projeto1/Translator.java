@@ -1,10 +1,16 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Context;
+import android.provider.Telephony;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+
+
 
 // Não é permitido mudar nada nessa classe
 // exceto o recheio dos três métodos.
@@ -13,14 +19,23 @@ public class Translator {
     private final Node root;
     private final HashMap<Character, Node> map;
 
+    private Context aaa = null;
+
+    private void showToast(Context context, String text) {
+        Toast toast = Toast.makeText(context , text, Toast.LENGTH_SHORT);
+
+        toast.show();
+    }
+
+
 
     // Você deve mudar o recheio deste construtor,
     // de acordo com os requisitos não-funcionais.
-    public Translator() {
+    public Translator(Context context) {
         // traço --> direita
         // Ponto --> esquerda
-
-        root = new Node('*');
+        aaa = context;
+        root = new Node(' ');
         map = new HashMap<>();
         map.put('*', root);
 
@@ -385,29 +400,26 @@ public class Translator {
 
         Node atual = root;
 
-        for(int i=0; i< code.length(); i++){
-            
+        for (int i = 0; i < code.length(); i++) {
+
             char pontobarra = code.charAt(i);
 
-            if (pontobarra == '.') {
+            if (code.length() <= 5) {
 
-                atual = atual.getLeft();
+                if (pontobarra == '.') {
 
+                    atual = atual.getLeft();
+
+                } else if (pontobarra == '-') {
+
+                    atual = atual.getRight();
+                }
+            } else{
+                showToast(aaa, " CARÁCTER INVÁLIDO");
             }
-            else if (pontobarra =='-'){
-
-                atual = atual.getRight();
-            }
         }
+        return atual.getValue();
 
-        if (atual != null){
-
-            return atual.getValue();
-        }
-        else{
-
-            return ' ';
-        }
     }
 
 
