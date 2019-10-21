@@ -1,4 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,12 @@ public class SmsActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
 
         toast.show();
+    }
+    private void startDictionaryActivity() {
+
+
+        Intent intent = new Intent(this, dictionary.class);
+        startActivity(intent);
     }
 
 
@@ -170,6 +177,8 @@ public class SmsActivity extends AppCompatActivity {
 
             }
 
+
+
         });
         t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -188,6 +197,18 @@ public class SmsActivity extends AppCompatActivity {
                 return true;
             }
         });
-}
+
+        Button dictionary_btn = findViewById(R.id.dictionary_btn);
+        dictionary_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startDictionaryActivity();
+
+            }
+
+        });
+
+
+    }
 
 }

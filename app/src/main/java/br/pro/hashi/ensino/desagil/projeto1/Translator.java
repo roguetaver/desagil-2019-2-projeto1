@@ -469,5 +469,29 @@ public class Translator {
         }
         return lista;
     }
+    // Funções criadas para facilitar a implementação do dicionário
+    public ArrayList<String> dictAlphaToMorse() {
+        ArrayList<String> returnList = new ArrayList<>();
 
+        for (Map.Entry<Character, Node> entry: map.entrySet()) {
+            Character key = entry.getKey();
+            String morse = this.charToMorse(key);
+            returnList.add(key + " => " + morse);
+        }
+
+        return returnList;
+    }
+
+    public ArrayList<String> dictMorseToAlpha() {
+        ArrayList<String> returnList = new ArrayList<>();
+
+        for (String morse : this.getCodes()) {
+            Character character = this.morseToChar(morse);
+            returnList.add(morse + " => " + character);
+        }
+
+        return returnList;
+
+
+    }
 }
